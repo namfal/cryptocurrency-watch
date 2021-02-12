@@ -1,5 +1,8 @@
 .App {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  height: 60vh;
+  width: 100vw;
+  background: yellow;
 }

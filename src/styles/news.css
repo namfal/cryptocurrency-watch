@@ -1,0 +1,13 @@
+.news-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 90vh;
+    background-color: darkslateblue;
+    transform: translateY(60vh);
+}
+
+.news-container.expanded {
+    transform: translateY(10vh);
+}
