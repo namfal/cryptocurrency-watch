@@ -4,7 +4,7 @@ import '../styles/ad.css'
 const Ad = () => {
     return (
         <div className="ad-container">
-            <p className="ad-label">Ad</p>
+            <h1 className="ad-header">Ad</h1>
         </div>
     )
 }
