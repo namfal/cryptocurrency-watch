@@ -7,8 +7,10 @@ import News from './components/News'
 function App () {
 	return (
 		<div className="App">
-			<Chart />
-			<Ad	/>
+			<div className="top-container">
+				<Chart />
+				<Ad	/>
+			</div>
 			<News />
 		</div>
 	)

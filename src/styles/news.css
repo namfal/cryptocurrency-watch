@@ -4,7 +4,7 @@
     left: 0;
     width: 100vw;
     height: 90vh;
-    background-color: darkslateblue;
+    border: 1px solid white;
     transform: translateY(60vh);
 }
 

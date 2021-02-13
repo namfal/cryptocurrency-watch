@@ -1,8 +1,14 @@
 .App {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.top-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 60vh;
   width: 100vw;
-  background: yellow;
 }
