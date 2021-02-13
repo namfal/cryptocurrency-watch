@@ -5,11 +5,14 @@ const News = () => {
     const [expanded, setExpanded] = useState(false)
 
     const toggleNews = () => {
-        let currentState = expanded
-        setExpanded(!currentState)
+        setExpanded(!expanded)
     }
 
-    return <div className={`news-container ${expanded && 'expanded'}`} onClick={toggleNews}>News</div>
+    return (
+        <div className={`news-container ${expanded && 'expanded'}`} onClick={toggleNews}>
+            <h1 className="news-header">News</h1>
+        </div>
+    )
 }
 
 export default News
