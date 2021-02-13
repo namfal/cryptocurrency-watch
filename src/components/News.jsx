@@ -10,7 +10,7 @@ const News = () => {
 
     return (
         <div className={`news-container ${expanded && 'expanded'}`} onClick={toggleNews}>
-            <h1 className="headers">News</h1>
+            <h1 className="headers news-header">News</h1>
         </div>
     )
 }
