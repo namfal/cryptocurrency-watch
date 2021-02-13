@@ -11,15 +11,3 @@
 .news-container.expanded {
     transform: translateY(10vh);
 }
-
-.news-header {
-    transform: skew(5deg) rotate(-25deg);
-    transform-origin: center;
-    width: 300px;
-    font-size: 92px;
-    color: rgb(28, 144, 153);
-    text-shadow:
-            4px 4px 0 rgba(213, 58, 52, 0.8),
-            -4px -4px 0 rgba(255, 156, 15, 0.8),
-            15px 15px 30px rgba(28, 144, 155, 0.2);
-}

@@ -1,29 +1,4 @@
-@font-face {
-    font-family: 'ITC Benguiat';
-    font-style: normal;
-    src: url('../assets/fonts/Benguiat-Medium.eot');
-    src: url('../assets/fonts/Benguiat-Medium.woff2') format('woff2'),
-            url('../assets/fonts/Benguiat-Medium.woff') format('woff'),
-            url('../assets/fonts/Benguiat-Medium.ttf') format('truetype'),
-            url('../assets/fonts/Benguiat-Medium.svg#customFont') format('svg'),
-            url('../assets/fonts/Benguiat-Medium.eot?#iefix') format('embedded-opentype'),
-            url("../assets/fonts/Benguiat-Medium.otf") format("opentype");
-    font-weight: normal;
-}
-
 .ad-container {
-    font-family: 'ITC Benguiat', serif;
     height: 300px;
     width: 300px;
-}
-
-.ad-header {
-    font-size: 82px;
-    color: hsl(338, 78%, 97%);
-    text-shadow:
-            0 1px 0 hsl(352, 74%, 14%),
-            0 2px 0 hsl(352, 74%, 16%),
-            0 3px 0 hsl(352, 74%, 18%),
-            0 4px 0 hsl(352, 74%, 20%),
-            10px 10px 15px rgba(0,0,0,.5);
 }
