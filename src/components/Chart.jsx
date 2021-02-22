@@ -10,13 +10,11 @@ const Chart = ({ data }) => {
 		<p className="current-value">{data.length > 0 && formatPrice(data[data.length - 1].value)}</p>
 		<ResponsiveContainer width="100%" height="100%">
 			<LineChart
-				width={500}
-				height={300}
 				data={data}
 				margin={{
 					top: 20,
 					right: 20,
-					left: 20,
+					left: 50,
 					bottom: 20
 				}}
 			>
@@ -32,7 +30,8 @@ const Chart = ({ data }) => {
 					domain={['dataMin', 'dataMax']}
 					padding={{ bottom: 25, top: 25 }}
 					tickLine={false}
-					ticks={[Math.min(...yValues).toFixed(2), Math.max(...yValues).toFixed(2)]}
+					ticks={[Math.min(...yValues), Math.max(...yValues)]}
+					tickFormatter={value => formatPrice(value)}
 					stroke="#fff"
 				/>
 				<Tooltip content={<ChartTooltip/>} />

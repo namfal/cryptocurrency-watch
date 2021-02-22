@@ -5,5 +5,5 @@ const currencySymbols = {
 }
 
 export function formatPrice (value, currency = 'usd') {
-	return `${currencySymbols[currency]} ${Number(value).toLocaleString('en', { minimumFractionDigits: 2 })}`
+	return `${currencySymbols[currency]}${Number(value).toLocaleString('en', { minimumFractionDigits: 2 })}`
 }
