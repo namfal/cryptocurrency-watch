@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/chart.css'
 import { getHistoricalData } from '../services/services'
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 import { throttle } from 'lodash'
 import Chart from './Chart'
 
