@@ -57,7 +57,7 @@ const ChartContainer = () => {
 					const time = new Date(newData.time)
 					return [...prev, {
 						time: `${time.getHours()}:${time.getMinutes()}`,
-						value: newData.price
+						value: Number(newData.price)
 					}]
 				})
 			}
