@@ -20,8 +20,8 @@ const Chart = ({ data }) => {
 			>
 				<XAxis
 					dataKey="time"
-					axisLine={false}
 					tickLine={false}
+					minTickGap={80}
 				/>
 				<YAxis
 					dataKey="value"
@@ -29,7 +29,7 @@ const Chart = ({ data }) => {
 					domain={['dataMin', 'dataMax']}
 					padding={{ bottom: 25, top: 25 }}
 					tickLine={false}
-					ticks={[Math.min(...yValues), Math.max(...yValues)]}
+					ticks={[Math.min(...yValues).toFixed(2), Math.max(...yValues).toFixed(2)]}
 				/>
 				<Tooltip content={<ChartTooltip/>} />
 				<Line type="monotone" dataKey="value" stroke="#8884d8" activeDot={{ r: 4 }} dot={false}/>
