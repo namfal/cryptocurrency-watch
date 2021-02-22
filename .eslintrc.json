@@ -25,6 +25,7 @@
         "react-hooks/exhaustive-deps": "warn",
         "semi": ["error", "never"],
         "indent": ["error", "tab"],
-        "no-tabs": "off"
+        "no-tabs": "off",
+        "prefer-const": "warn"
     }
 }
