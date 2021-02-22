@@ -13,7 +13,7 @@
 }
 
 .news-container.expanded {
-    transform: translateY(15vh);
+    transform: translateY(14vh);
 }
 
 .news-header {
