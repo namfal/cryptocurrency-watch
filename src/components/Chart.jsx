@@ -36,8 +36,4 @@ const Chart = ({ data }) => {
 	</div>
 }
 
-Chart.propTypes = {
-	data: Object
-}
-
 export default Chart
