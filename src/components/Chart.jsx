@@ -2,11 +2,12 @@ import React from 'react'
 import '../styles/chart.css'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 import ChartTooltip from './ChartTooltip'
+import { formatPrice } from '../utils'
 
 const Chart = ({ data }) => {
 	const yValues = data.map(item => item.value)
 	return <div className="chart-container">
-		<p className="current-value">{data.length > 0 && data[data.length - 1].value.toFixed(2)}</p>
+		<p className="current-value">{data.length > 0 && formatPrice(data[data.length - 1].value)}</p>
 		<ResponsiveContainer width="100%" height="100%">
 			<LineChart
 				width={500}
