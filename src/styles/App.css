@@ -7,7 +7,7 @@
 
 .top-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 60vh;
   width: 100vw;

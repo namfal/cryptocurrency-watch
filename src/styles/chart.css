@@ -1,6 +1,5 @@
 .chart-container {
-    height: 40vh;
-    width: 60vw;
+    height: 45vh;
+    width: 80vw;
     min-width: 600px;
-    border: 1px solid white;
 }

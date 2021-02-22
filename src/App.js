@@ -1,7 +1,6 @@
 import './styles/App.css'
 import React from 'react'
 import Chart from './components/Chart'
-import Ad from './components/Ad'
 import News from './components/News'
 
 function App () {
@@ -9,7 +8,6 @@ function App () {
 		<div className="App">
 			<div className="top-container">
 				<Chart />
-				<Ad	/>
 			</div>
 			<News />
 		</div>
