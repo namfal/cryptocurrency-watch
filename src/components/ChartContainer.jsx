@@ -29,7 +29,7 @@ const ChartContainer = () => {
 				})
 				setData(historicData)
 			} catch (e) {
-				console.log(e.message)
+				console.error(e.message)
 			}
 		})()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,25 +37,21 @@ const ChartContainer = () => {
 
 	useEffect(() => {
 		socket.onopen = (e) => {
-			// console.log('[open] Connection established')
 			socket.send(JSON.stringify(subscription))
 		}
 
 		socket.onerror = (error) => {
-			console.log(`[error] ${error.message}`)
+			console.error(`[error] ${error.message}`)
 		}
 
 		socket.onclose = (e) => {
-			if (e.wasClean) {
-				console.log(`[close] Connection closed cleanly, code=${e.code} reason=${e.reason}`)
-			} else {
-				console.log('[close] Connection died')
+			if (!e.wasClean) {
+				console.error('[close] Connection died due to a problem')
 			}
 		}
 
 		socket.onmessage = throttle((e) => {
 			const newData = JSON.parse(e.data)
-			console.log(newData)
 			if (newData.type === 'ticker') {
 				setData(prev => {
 					const time = new Date(newData.time)
