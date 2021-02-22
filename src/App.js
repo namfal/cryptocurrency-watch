@@ -1,13 +1,13 @@
 import './styles/App.css'
 import React from 'react'
-import Chart from './components/Chart'
+import ChartContainer from './components/ChartContainer'
 import News from './components/News'
 
 function App () {
 	return (
 		<div className="App">
 			<div className="top-container">
-				<Chart />
+				<ChartContainer />
 			</div>
 			<News />
 		</div>
