@@ -15,10 +15,13 @@ export function getHistoricalData (productId, range = null) {
 		}
 	}).then(response => {
 		const sortFn = (a, b) => a[0] - b[0]
-		const convertEpochToCET = iso => new Date(iso * 1000)
+		const convertEpochToUCT = epoch => new Date(epoch * 1000).toISOString()
 		const mapFn = arr => {
-			const [time, ...rest] = arr
-			return [convertEpochToCET(time), ...rest]
+			const [date, low] = arr
+			return {
+				date: convertEpochToUCT(date),
+				value: low
+			}
 		}
 		return response.data.sort(sortFn).map(mapFn)
 	})

@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/chart.css'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 import ChartTooltip from './ChartTooltip'
-import { formatPrice } from '../utils'
+import { formatPrice, formatDate } from '../utils'
 
 const Chart = ({ data }) => {
 	const yValues = data.map(item => item.value)
@@ -19,10 +19,11 @@ const Chart = ({ data }) => {
 				}}
 			>
 				<XAxis
-					dataKey="time"
+					dataKey="date"
 					tickLine={false}
 					minTickGap={80}
 					stroke="#fff"
+					tickFormatter={date => formatDate(date)}
 				/>
 				<YAxis
 					dataKey="value"

@@ -21,13 +21,7 @@ const ChartContainer = () => {
 		(async () => {
 			try {
 				const resp = await getHistoricalData('BTC-USD')
-				const historicData = resp.map(item => {
-					return {
-						time: `${item[0].getHours()}:${item[0].getMinutes()}`,
-						value: item[1]
-					}
-				})
-				setData(historicData)
+				setData(resp)
 			} catch (e) {
 				console.error(e.message)
 			}
@@ -54,9 +48,8 @@ const ChartContainer = () => {
 			const newData = JSON.parse(e.data)
 			if (newData.type === 'ticker') {
 				setData(prev => {
-					const time = new Date(newData.time)
 					return [...prev, {
-						time: `${time.getHours()}:${time.getMinutes()}`,
+						date: newData.time,
 						value: Number(newData.price)
 					}]
 				})
