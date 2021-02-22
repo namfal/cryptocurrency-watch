@@ -22,6 +22,7 @@ const Chart = ({ data }) => {
 					dataKey="time"
 					tickLine={false}
 					minTickGap={80}
+					stroke="#fff"
 				/>
 				<YAxis
 					dataKey="value"
@@ -30,9 +31,10 @@ const Chart = ({ data }) => {
 					padding={{ bottom: 25, top: 25 }}
 					tickLine={false}
 					ticks={[Math.min(...yValues).toFixed(2), Math.max(...yValues).toFixed(2)]}
+					stroke="#fff"
 				/>
 				<Tooltip content={<ChartTooltip/>} />
-				<Line type="monotone" dataKey="value" stroke="#8884d8" activeDot={{ r: 4 }} dot={false}/>
+				<Line type="monotone" dataKey="value" stroke="rgba(65, 185, 131, 1)" activeDot={{ r: 4 }} dot={false}/>
 			</LineChart>
 		</ResponsiveContainer>
 	</div>
