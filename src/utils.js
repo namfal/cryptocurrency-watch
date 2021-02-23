@@ -11,9 +11,6 @@ export function formatPrice (value, currency = 'usd') {
 export function formatDate (isoDate, fullDate = false) {
 	const local = new Date(isoDate)
 	if (fullDate) {
-		// while this works well, it is not in the local style
-		// const [, month, date, year] = local.toString().split(' ')
-		// return `${month} ${date}, ${year}`
 		const locale = navigator.languages ? navigator.languages[0] : navigator.language
 		return local.toLocaleString(locale, { year: 'numeric', month: 'short', day: 'numeric' })
 	}
