@@ -3,6 +3,7 @@ import '../styles/chart.css'
 import { getHistoricalData } from '../services/services'
 import { throttle } from 'lodash'
 import Chart from './Chart'
+import { formatDate } from '../utils'
 
 const ChartContainer = () => {
 	const socket = new WebSocket('wss://ws-feed.gdax.com')
