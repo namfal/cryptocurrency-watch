@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
     transform: translateY(60vh);
     transition: all 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
     background: #292E49;
@@ -14,9 +14,14 @@
 }
 
 .news-container.expanded {
-    transform: translateY(14vh);
+    transform: translateY(20vh);
 }
 
 .news-header {
     margin: 20px;
+}
+
+.test{
+    position: absolute;
+    bottom: 0;
 }
