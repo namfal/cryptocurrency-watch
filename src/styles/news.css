@@ -9,7 +9,8 @@
     background: #292E49;
     background: -webkit-linear-gradient(to bottom, #292E49, #536976, #BBD2C5);
     background: linear-gradient(to bottom, #292E49, #536976, #BBD2C5);
-
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }
 
 .news-container.expanded {
