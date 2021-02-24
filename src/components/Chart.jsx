@@ -8,7 +8,7 @@ const Chart = ({ data }) => {
 	const yValues = data.map(item => item.value)
 	return <div className="chart-container">
 		<p className="current-value">{data.length > 0 && formatPrice(data[data.length - 1].value)}</p>
-		<ResponsiveContainer width="100%" height="100%">
+		<ResponsiveContainer width="95%" height="80%">
 			<LineChart
 				data={data}
 				margin={{
