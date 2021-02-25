@@ -61,17 +61,21 @@
 }
 
 .news-item {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.2);
     margin: 40px 0;
     padding: 10px;
     border-radius: 10px;
-    backdrop-filter: blur(2px) invert(100%);
+    backdrop-filter: blur(2px) invert(100);
     overflow: visible;
     position: relative;
 }
 
 .news-item:hover {
-    backdrop-filter: blur(4px) opacity(0.6);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.news-item:hover .news-title {
+    color: rgb(48, 44, 153);
 }
 
 .news-title {
