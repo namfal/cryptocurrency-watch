@@ -6,9 +6,9 @@ import { formatPrice, formatDate } from '../utils'
 
 const Chart = ({ data }) => {
 	const yValues = data.map(item => item.value)
-	return <div className="chart-container">
+	return <div className="chart">
 		<p className="current-value">{data.length > 0 && formatPrice(data[data.length - 1].value)}</p>
-		<ResponsiveContainer width="95%" height="80%">
+		<ResponsiveContainer>
 			<LineChart
 				data={data}
 				margin={{
