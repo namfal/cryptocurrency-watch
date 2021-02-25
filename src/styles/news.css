@@ -43,10 +43,10 @@
 
 .news-toggle {
     position: absolute;
-    height: 15px;
+    height: 10px;
     width: 200px;
     align-self: center;
-    top: 20px;
+    top: 15px;
     border-radius: 20px;
     border: none;
     background: white;
