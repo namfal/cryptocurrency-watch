@@ -11,6 +11,8 @@
     background: linear-gradient(to bottom, #292E49, #536976, #BBD2C5);
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
+    display: flex;
+    flex-direction: column;
 }
 
 .news-container.expanded {
@@ -19,9 +21,36 @@
 
 .news-header {
     margin: 20px;
+    flex: 0 1 auto;
 }
 
-.test{
+.news{
+    overflow: scroll;
+    height: inherit;
+    margin: 0 50px 20px 50px;
+    flex: 1 1 auto;
+}
+
+.news a, .news a:active, .news a:visited, .news a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.news-toggle {
     position: absolute;
-    bottom: 0;
+    height: 15px;
+    width: 200px;
+    align-self: center;
+    top: 20px;
+    border-radius: 20px;
+    border: none;
+    background: white;
+    outline: none;
+    opacity: 0.2;
+    transition: all 200ms ease-in-out;
+}
+
+.news-toggle:hover {
+    cursor: pointer;
+    opacity: 1;
 }
