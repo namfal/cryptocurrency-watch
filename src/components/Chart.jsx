@@ -36,7 +36,14 @@ const Chart = ({ data }) => {
 					stroke="#fff"
 				/>
 				<Tooltip content={<ChartTooltip/>} />
-				<Line type="monotone" dataKey="value" stroke="rgba(65, 185, 131, 1)" activeDot={{ r: 4 }} dot={false}/>
+				<Line
+					type="monotone"
+					dataKey="value"
+					stroke="rgba(65, 185, 131, 1)"
+					activeDot={{ r: 4 }}
+					dot={false}
+					strokeWidth={1.5}
+				/>
 			</LineChart>
 		</ResponsiveContainer>
 	</div>
