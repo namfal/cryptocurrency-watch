@@ -15,3 +15,5 @@ Before you run this locally, you need to obtain your own API key from [NewsAPI](
 Background by [SVGBackgrounds](SVGBackgrounds.com)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+PS: These are free to use API endpoints, but rate limited.
