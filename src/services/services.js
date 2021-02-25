@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const BASE_URL = 'https://api.pro.coinbase.com'
+const BASE_URL_NEWS_API = 'https://newsapi.org/v2'
 
 export function getHistoricalData (productId, range = null) {
 	const date = new Date()
@@ -27,6 +28,15 @@ export function getHistoricalData (productId, range = null) {
 	})
 }
 
-export function getProducts () {
-	return axios.get(`${BASE_URL}/products`)
+export function getTopHeadlines () {
+	return axios.get(`${BASE_URL_NEWS_API}/top-headlines`, {
+		params: {
+			sources: 'bloomberg, business-insider, crypto-coins-news, fortune'
+		},
+		headers: {
+			'X-Api-Key': process.env.REACT_APP_NEWS_API
+		}
+	}).then(resp => {
+		return resp.data.articles
+	})
 }
