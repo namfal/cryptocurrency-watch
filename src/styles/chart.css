@@ -1,10 +1,10 @@
 .chart-container {
-    height: 45vh;
+    height: 50vh;
     width: 80vw;
     min-width: 600px;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
 
@@ -14,7 +14,7 @@
 }
 
 .chart {
-    height: 85%;
+    height: 75%;
     width: 98%;
     display: flex;
     justify-content: center;
