@@ -18,6 +18,8 @@ After cloning, `cd` into the directory and run `yarn install && yarn start`.
 
 Background by [SVGBackgrounds](SVGBackgrounds.com)
 
+Mesh Gradient by [Mesh Gradient](https://meshgradient.com/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 PS: These are free to use API endpoints, but rate limited.
