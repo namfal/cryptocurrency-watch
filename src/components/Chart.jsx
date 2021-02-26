@@ -4,10 +4,10 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'rec
 import ChartTooltip from './ChartTooltip'
 import { formatPrice, formatDate } from '../utils'
 
-const Chart = ({ data }) => {
+const Chart = ({ data, currency }) => {
 	const yValues = data.map(item => item.value)
 	return <div className="chart">
-		<p className="current-value">{data.length > 0 && formatPrice(data[data.length - 1].value)}</p>
+		<p className="current-value">{data.length > 0 && formatPrice(data[data.length - 1].value, currency)}</p>
 		<ResponsiveContainer>
 			<LineChart
 				data={data}
@@ -23,7 +23,7 @@ const Chart = ({ data }) => {
 					tickLine={false}
 					minTickGap={80}
 					stroke="#fff"
-					tickFormatter={date => formatDate(date)}
+					tickFormatter={date => formatDate(date, currency)}
 				/>
 				<YAxis
 					dataKey="value"
@@ -32,10 +32,10 @@ const Chart = ({ data }) => {
 					padding={{ bottom: 25, top: 25 }}
 					tickLine={false}
 					ticks={[Math.min(...yValues), Math.max(...yValues)]}
-					tickFormatter={value => formatPrice(value)}
+					tickFormatter={value => formatPrice(value, currency)}
 					stroke="#fff"
 				/>
-				<Tooltip content={<ChartTooltip/>} />
+				<Tooltip content={<ChartTooltip currency={currency}/>} />
 				<Line
 					type="monotone"
 					dataKey="value"
