@@ -15,7 +15,6 @@ const News = () => {
 		(async () => {
 			try {
 				const news = await getTopHeadlines()
-				console.log(news)
 				setNews(news)
 			} catch (e) {
 				console.error(e.response.data.message)
