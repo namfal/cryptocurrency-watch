@@ -4,6 +4,7 @@ import { getHistoricalData } from '../services/services'
 import { throttle } from 'lodash'
 import Chart from './Chart'
 import RadioButtons	from './RadioButtons'
+import CurrentValue from './CurrentValue'
 
 const ChartContainer = () => {
 	const socket = useRef(null)
@@ -90,6 +91,7 @@ const ChartContainer = () => {
 	}
 
 	return <div className="chart-container">
+		<CurrentValue price={data.length > 0 && data[data.length - 1].value} currency={currency}/>
 		<Chart data={data} currency={currency}/>
 		<RadioButtons
 			options={['USD', 'EUR', 'GBP']}

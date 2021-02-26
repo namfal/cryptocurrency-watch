@@ -4,6 +4,7 @@ import { getHistoricalData } from '../services/services'
 import { throttle } from 'lodash'
 import Chart from './Chart'
 import RadioButtons	from './RadioButtons'
+import CurrentValue from './ChartContainer'
 
 class ChartContainerClass extends React.Component {
 	constructor (props) {
@@ -97,6 +98,7 @@ class ChartContainerClass extends React.Component {
 
 	render () {
 		return <div className="chart-container">
+			<CurrentValue price={this.state.data.length > 0 && this.state.data[this.state.data.length - 1].value} currency={this.state.currency}/>
 			<Chart data={this.state.data} currency={this.state.currency}/>
 			<RadioButtons
 				options={['USD', 'EUR', 'GBP']}
