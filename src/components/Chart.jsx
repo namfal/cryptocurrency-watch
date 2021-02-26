@@ -23,7 +23,7 @@ const Chart = ({ data, currency }) => {
 					tickLine={false}
 					minTickGap={80}
 					stroke="#fff"
-					tickFormatter={date => formatDate(date, currency)}
+					tickFormatter={date => formatDate(date)}
 				/>
 				<YAxis
 					dataKey="value"
