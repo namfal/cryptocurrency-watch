@@ -46,6 +46,15 @@ class ChartContainerClass extends React.Component {
 		}, 5000)
 	}
 
+	async componentDidUpdate (prevProps, prevState, snapshot) {
+		if (prevState.currency !== this.state.currency) {
+			this.setState({ data: [] })
+			await this.loadHistoricalData()
+			this.unsubscribe()
+			this.subscribe()
+		}
+	}
+
 	componentWillUnmount () {
 		this.socket.close()
 	}
@@ -60,11 +69,7 @@ class ChartContainerClass extends React.Component {
 	}
 
 	handleCurrencyChange (value) {
-		this.setState({ currency: value, data: [] }, async () => {
-			await this.loadHistoricalData()
-			this.unsubscribe()
-			this.subscribe()
-		})
+		this.setState({ currency: value })
 	}
 
 	getSubscription () {
