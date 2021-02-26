@@ -1,10 +1,10 @@
 const currencySymbols = {
-	usd: '$',
-	eur: '€',
-	gbp: '£'
+	USD: '$',
+	EUR: '€',
+	GBP: '£'
 }
 
-export function formatPrice (value, currency = 'usd') {
+export function formatPrice (value, currency = 'USD') {
 	return `${currencySymbols[currency]}${Number(value).toLocaleString('en', { minimumFractionDigits: 2 })}`
 }
 
