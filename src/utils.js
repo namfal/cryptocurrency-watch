@@ -18,3 +18,38 @@ export function formatDate (isoDate, fullDate = false) {
 	const minutes = local.getMinutes() > 9 ? local.getMinutes() : `0${local.getMinutes()}`
 	return `${hours}:${minutes}`
 }
+
+export function getStartDateAndGranularity (rangeStart) {
+	const date = new Date()
+	switch (rangeStart) {
+	case '12hrs':
+		return {
+			startDate: new Date(date.getTime() - 43200000),
+			granularity: 300
+		}
+	case '24hrs':
+		return {
+			startDate: new Date(date.getTime() - 86400000),
+			granularity: 300
+		}
+	case '1week':
+		return {
+			startDate: new Date(date.getTime() - 604800000),
+			granularity: 3600
+		}
+	case '1month':
+		date.setMonth(date.getMonth() - 1)
+		return {
+			startDate: date,
+			granularity: 21600
+		}
+	case '3months':
+		date.setMonth(date.getMonth() - 3)
+		return {
+			startDate: date,
+			granularity: 86400
+		}
+	default:
+		throw new Error('Missing or unsupported parameter for getStartDate method.')
+	}
+}

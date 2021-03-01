@@ -1,18 +1,16 @@
 import axios from 'axios'
+import { getStartDateAndGranularity } from '../utils'
 
 const BASE_URL = 'https://api.pro.coinbase.com'
 const BASE_URL_NEWS_API = 'https://newsapi.org/v2'
 
-export function getHistoricalData (productId, range = null) {
-	const date = new Date()
-	date.setHours(0)
-	date.setMinutes(0)
-	date.setSeconds(0)
+export function getHistoricalData (productId, range = '24hrs') {
+	const { startDate, granularity } = getStartDateAndGranularity(range)
 	return axios.get(`${BASE_URL}/products/${productId}/candles`, {
 		params: {
-			start: date.toISOString(),
+			start: startDate.toISOString(),
 			end: new Date().toISOString(),
-			granularity: 300
+			granularity: granularity
 		}
 	}).then(response => {
 		const sortFn = (a, b) => a[0] - b[0]
