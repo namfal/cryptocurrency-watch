@@ -1,6 +1,8 @@
 # Crypto Watch
 
-A simple project to watch crypto value in real time and related news.
+A side project to watch crypto value in real time and related news. I created this app simply to familiarize myself with WebHooks. 
+
+For a live demo, you can visit [here](https://tender-bose-c576c3.netlify.app).
 
 ## To run this locally
 
@@ -17,8 +19,6 @@ After cloning, `cd` into the directory and run `yarn install && yarn start`.
 [NewsAPI](https://newsapi.org)
 
 Background by [SVGBackgrounds](SVGBackgrounds.com)
-
-Mesh Gradient by [Mesh Gradient](https://meshgradient.com/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
