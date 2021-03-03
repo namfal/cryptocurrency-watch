@@ -5,6 +5,7 @@ import { throttle } from 'lodash'
 import Chart from './Chart'
 import RadioButtons	from './RadioButtons'
 import CurrentValue from './CurrentValue'
+import { formatPrice } from '../utils'
 
 const ChartContainer = () => {
 	const socket = useRef(null)
@@ -101,7 +102,13 @@ const ChartContainer = () => {
 	const getPair = () => `${crypto}-${currency}`
 
 	return <div className="chart-container">
-		<CurrentValue price={data.length > 0 && data[data.length - 1].value} currency={currency}/>
+		<div className="chart-titles">
+			<CurrentValue>{getPair()}</CurrentValue>
+			{
+				data.length > 0 &&
+				<CurrentValue>{formatPrice(data[data.length - 1].value, currency)}</CurrentValue>
+			}
+		</div>
 		<Chart data={data} currency={currency}/>
 		<div className="chart-controls">
 			<RadioButtons

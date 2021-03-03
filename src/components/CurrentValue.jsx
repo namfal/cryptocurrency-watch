@@ -1,5 +1,4 @@
 import React from 'react'
-import { formatPrice } from '../utils'
 
 const style = {
 	textAlign: 'right',
@@ -9,8 +8,8 @@ const style = {
 	alignSelf: 'flex-end'
 }
 
-const CurrentValue = ({ price, currency }) => {
-	return price ? <p className="current-value" style={style}>{formatPrice(price, currency)}</p> : null
+const CurrentValue = ({ children }) => {
+	return <p className="current-value" style={style}>{children}</p>
 }
 
 export default CurrentValue
