@@ -26,10 +26,6 @@ export function getHistoricalData (productId, range = '24hrs') {
 	})
 }
 
-export function getProducts () {
-	return axios.get(`${BASE_URL}/products/`)
-}
-
 export function getGuardianNews () {
 	return axios.get(GUARDIAN_BASE_URL, {
 		params: {

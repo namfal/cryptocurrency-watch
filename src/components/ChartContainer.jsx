@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import '../styles/chart.css'
-import { getHistoricalData, getProducts } from '../services/services'
+import { getHistoricalData } from '../services/services'
 import { throttle } from 'lodash'
 import Chart from './Chart'
 import RadioButtons	from './RadioButtons'
@@ -16,9 +16,6 @@ const ChartContainer = () => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const products = await getProducts()
-				console.log(products)
-				console.log('loading historical data to pair: ' + getPair())
 				const resp = await getHistoricalData(getPair())
 				setData(resp)
 			} catch (e) {
@@ -87,7 +84,6 @@ const ChartContainer = () => {
 	const handleCryptoChange = (value) => setCrypto(value)
 
 	const getSubscription = () => {
-		console.log('get subscription to pair: ' + getPair())
 		return {
 			type: 'subscribe',
 			channels: [
