@@ -1,14 +1,14 @@
 # Crypto Watch
 
-A side project to watch crypto value in real time and related news. I created this app simply to familiarize myself with WebHooks. 
+A side project to watch crypto value in real time and related news. I created this app simply to familiarize myself with WebHooks and React Hooks. 
 
 For a live demo, you can visit [here](https://tender-bose-c576c3.netlify.app).
 
 ## To run this locally
 
-Before you run this locally, you need to obtain your own API key from [NewsAPI](https://newsapi.org) and put it in the `.env` file:
+Before you run this locally, you need to obtain your own API key from [The Guardian OpenPlatform](https://open-platform.theguardian.com) and put it in the `.env` file:
 
-`REACT_APP_NEWS_API= YOUR API KEY`
+`REACT_APP_GUARDIAN_API_KEY=YOUR API KEY`
 
 After cloning, `cd` into the directory and run `yarn install && yarn start`.
 
