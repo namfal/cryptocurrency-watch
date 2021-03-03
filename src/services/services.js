@@ -2,7 +2,6 @@ import axios from 'axios'
 import { getStartDateAndGranularity } from '../utils'
 
 const BASE_URL = 'https://api.pro.coinbase.com'
-const BASE_URL_NEWS_API = 'https://newsapi.org/v2'
 const GUARDIAN_BASE_URL = 'https://content.guardianapis.com/search'
 
 export function getHistoricalData (productId, range = '24hrs') {
