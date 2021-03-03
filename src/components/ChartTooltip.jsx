@@ -5,7 +5,7 @@ const ChartTooltip = ({ active, payload, currency }) => {
 	if (active && payload) {
 		return (
 			<div className="chart-tooltip">
-				<p className="time">{ formatDate(payload[0].payload.date) }</p>
+				<p className="time">{ formatDate(payload[0].payload.date, true) }</p>
 				<p className="value">{ formatPrice(payload[0].payload.value, currency) }</p>
 			</div>
 		)
