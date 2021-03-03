@@ -1,13 +1,13 @@
 import React from 'react'
 import '../styles/buttons.css'
 
-const RadioButtons = ({ options, name, handleClick, currentCurrency }) => {
+const RadioButtons = ({ options, name, handleClick, currentValue }) => {
 	return <div className="radio-btn-container">
 		{
 			options.map((option, index) => {
 				return <div
 					key={option + index}
-					className={`radio-option ${currentCurrency === option && 'selected'}`}
+					className={`radio-option ${currentValue === option && 'selected'}`}
 					onClick={() => handleClick(option)}
 				>
 					<input

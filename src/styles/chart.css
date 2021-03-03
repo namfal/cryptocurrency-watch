@@ -25,3 +25,11 @@
     border-radius: 8px;
     border: 1px solid rgba(65, 185, 131, 1);
 }
+
+.chart-controls {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}

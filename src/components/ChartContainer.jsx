@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import '../styles/chart.css'
-import { getHistoricalData } from '../services/services'
+import { getHistoricalData, getProducts } from '../services/services'
 import { throttle } from 'lodash'
 import Chart from './Chart'
 import RadioButtons	from './RadioButtons'
@@ -10,11 +10,15 @@ const ChartContainer = () => {
 	const socket = useRef(null)
 	const [data, setData] = useState([])
 	const [currency, setCurrency] = useState('USD')
+	const [crypto, setCrypto] = useState('BTC')
 
 	useEffect(() => {
 		(async () => {
 			try {
-				const resp = await getHistoricalData(`BTC-${currency}`)
+				const products = await getProducts()
+				console.log(products)
+				console.log('loading historical data to pair: ' + getPair())
+				const resp = await getHistoricalData(getPair())
 				setData(resp)
 			} catch (e) {
 				console.error(e.message)
@@ -24,7 +28,8 @@ const ChartContainer = () => {
 		return () => {
 			setData([])
 		}
-	}, [currency])
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [currency, crypto])
 
 	useEffect(() => {
 		if (socket.current) {
@@ -38,7 +43,7 @@ const ChartContainer = () => {
 			}))
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [currency])
+	}, [currency, crypto])
 
 	useEffect(() => {
 		if (!socket.current) {
@@ -78,27 +83,40 @@ const ChartContainer = () => {
 
 	const handleCurrencyChange = (value) => setCurrency(value)
 
+	const handleCryptoChange = (value) => setCrypto(value)
+
 	const getSubscription = () => {
+		console.log('get subscription to pair: ' + getPair())
 		return {
 			type: 'subscribe',
 			channels: [
 				{
 					name: 'ticker',
-					product_ids: [`BTC-${currency}`]
+					product_ids: [getPair()]
 				}
 			]
 		}
 	}
 
+	const getPair = () => `${crypto}-${currency}`
+
 	return <div className="chart-container">
 		<CurrentValue price={data.length > 0 && data[data.length - 1].value} currency={currency}/>
 		<Chart data={data} currency={currency}/>
-		<RadioButtons
-			options={['USD', 'EUR', 'GBP']}
-			name="currency"
-			handleClick={handleCurrencyChange}
-			currentCurrency={currency}
-		/>
+		<div className="chart-controls">
+			<RadioButtons
+				options={['BTC', 'ETH', 'LTC', 'BCH', 'ETC']}
+				name="crypto"
+				handleClick={handleCryptoChange}
+				currentValue={crypto}
+			/>
+			<RadioButtons
+				options={['USD', 'EUR', 'GBP']}
+				name="currency"
+				handleClick={handleCurrencyChange}
+				currentValue={currency}
+			/>
+		</div>
 	</div>
 }
 
