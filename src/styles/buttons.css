@@ -15,12 +15,16 @@
     font-size: 18px;
     font-weight: 600;
     box-shadow: 0 0 4px 1px #fff;
+    opacity: 0.6;
 }
 
 .radio-option:hover {
-    background: rgb(23, 21, 38);
-    color: #fff;
+    /*background: rgb(23, 21, 38);*/
+    /*color: #fff;*/
     cursor: pointer;
+    opacity: 1;
+    box-shadow: 0 0 4px 1px rgb(65, 185, 131);
+    border-color: rgb(65, 185, 131);
 }
 
 .radio-option label:hover {
@@ -30,6 +34,8 @@
 .radio-option.selected {
     background: rgb(23, 21, 38);
     color: #fff;
+    box-shadow: 0 0 4px 2px rgb(65, 185, 131);
+    opacity: 1;
 }
 
 .radio-input {
