@@ -14,9 +14,9 @@ After cloning, `cd` into the directory and run `yarn install && yarn start`.
 
 ### Services Used
 
-[coinbase Pro Api](https://docs.pro.coinbase.com/#fix-api)
+Crypto data by [coinbase Pro](https://docs.pro.coinbase.com/#fix-api)
 
-[NewsAPI](https://newsapi.org)
+News by [The Guardian OpenPlatform](https://open-platform.theguardian.com/access/)
 
 Background by [SVGBackgrounds](SVGBackgrounds.com)
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/news.css'
-import { getTopHeadlines } from '../services/services'
+import { getGuardianNews } from '../services/services'
 import NewsItem from './NewsItem'
 
 const News = () => {
@@ -14,7 +14,7 @@ const News = () => {
 	useEffect(() => {
 		(async () => {
 			try {
-				const news = await getTopHeadlines()
+				const news = await getGuardianNews()
 				setNews(news)
 			} catch (e) {
 				console.error(e.response.data.message)
@@ -25,11 +25,13 @@ const News = () => {
 	return (
 		<div className={`news-container ${expanded && 'expanded'}`}>
 			<button className="news-toggle" onClick={toggleNews} value="expand-news-pane"/>
-			<h1 className="headers news-header" onClick={toggleNews}>News</h1>
+			<h1 className="headers news-header" onClick={toggleNews}>
+				News<span className="powered-by"> powered by <a href="https://www.theguardian.com/international" onClick={e => e.stopPropagation()}>The Guardian</a></span>
+			</h1>
 			<div className="news">
 				{
-					news.map((newsItem, index) => {
-						return <NewsItem newsItem={newsItem} key={newsItem.source.id + index}/>
+					news.map(newsItem => {
+						return <NewsItem newsItem={newsItem} key={newsItem.id}/>
 					})
 				}
 			</div>

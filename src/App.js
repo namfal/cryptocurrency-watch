@@ -1,4 +1,5 @@
 import './styles/App.css'
+import './styles/common.css'
 import React from 'react'
 import ChartContainer from './components/ChartContainer'
 import News from './components/News'

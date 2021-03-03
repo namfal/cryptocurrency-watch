@@ -3,6 +3,7 @@ import { getStartDateAndGranularity } from '../utils'
 
 const BASE_URL = 'https://api.pro.coinbase.com'
 const BASE_URL_NEWS_API = 'https://newsapi.org/v2'
+const GUARDIAN_BASE_URL = 'https://content.guardianapis.com/search'
 
 export function getHistoricalData (productId, range = '24hrs') {
 	const { startDate, granularity } = getStartDateAndGranularity(range)
@@ -26,15 +27,17 @@ export function getHistoricalData (productId, range = '24hrs') {
 	})
 }
 
-export function getTopHeadlines () {
-	return axios.get(`${BASE_URL_NEWS_API}/top-headlines`, {
+export function getGuardianNews () {
+	return axios.get(GUARDIAN_BASE_URL, {
 		params: {
-			sources: 'bloomberg, business-insider, crypto-coins-news, fortune'
-		},
-		headers: {
-			'X-Api-Key': process.env.REACT_APP_NEWS_API
+			'api-key': process.env.REACT_APP_GUARDIAN_API_KEY,
+			'page-size': 50,
+			q: 'cryptocurrency OR stocks OR bitcoin OR crypto',
+			'show-fields': 'trailText',
+			'order-by': 'newest'
 		}
-	}).then(resp => {
-		return resp.data.articles
-	})
+	}).then(async response => {
+		return response.data.response.results
+	}
+	)
 }

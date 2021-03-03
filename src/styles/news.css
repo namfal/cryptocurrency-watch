@@ -25,20 +25,15 @@
     flex: 0 1 auto;
 }
 
-.news{
+.news {
     overflow: scroll;
     height: 200px;
     margin: 0 50px 20px 50px;
     flex: 0 1 25vh;
 }
 
-.news-container.expanded .news{
+.news-container.expanded .news {
     flex: 1 1 auto;
-}
-
-.news a, .news a:active, .news a:visited, .news a:hover {
-    color: #000;
-    text-decoration: none;
 }
 
 .news-toggle {
