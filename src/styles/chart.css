@@ -44,4 +44,8 @@
     .current-value {
         font-size: 2em;
     }
+
+    .chart-controls {
+        flex-direction: column;
+    }
 }
