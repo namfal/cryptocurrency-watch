@@ -41,8 +41,12 @@
 }
 
 @media screen and (max-width: 850px){
+    .chart-container {
+        width: 95vw;
+    }
+
     .current-value {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
     .chart-controls {
