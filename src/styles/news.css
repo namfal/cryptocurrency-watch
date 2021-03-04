@@ -102,3 +102,13 @@
     right: 15px;
     font-weight: 400;
 }
+
+@media screen and (max-width: 850px){
+    .news-header {
+        font-size: 3em;
+    }
+
+    .news {
+        flex-basis: 30vh;
+    }
+}

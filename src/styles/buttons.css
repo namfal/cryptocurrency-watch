@@ -42,3 +42,9 @@
     -moz-appearance: none;
     appearance: none;
 }
+
+@media screen and (max-width: 850px){
+    .radio-option {
+        font-size: 14px;
+    }
+}
