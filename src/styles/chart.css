@@ -1,13 +1,14 @@
 .chart-container {
     height: 50vh;
     width: 80vw;
+    font-size: 18px;
     min-width: 600px;
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    padding: 15px;
+    padding: 1em;
 
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1),  rgba(255, 255, 255, 0.2));
     border-radius: 8px;
@@ -20,8 +21,9 @@
 }
 
 .chart-tooltip {
+    font-size: 1em;
     background-color: #fff;
-    padding: 10px;
+    padding: 0.5em;
     border-radius: 8px;
     border: 1px solid rgba(65, 185, 131, 1);
 }
@@ -32,4 +34,10 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+}
+
+.current-value {
+    font-size: 3em;
+    font-weight: 600;
+    color: #fff;
 }
