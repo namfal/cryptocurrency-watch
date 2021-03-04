@@ -11,10 +11,8 @@ const Chart = ({ data, currency }) => {
 			<LineChart
 				data={data}
 				margin={{
-					top: 20,
 					right: 20,
-					left: 50,
-					bottom: 20
+					left: 40
 				}}
 			>
 				<XAxis
