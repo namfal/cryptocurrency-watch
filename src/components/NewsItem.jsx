@@ -4,7 +4,11 @@ import { formatDate } from '../utils'
 const NewsItem = ({ newsItem }) => {
 	return <div className="news-item">
 		<a href={newsItem.webUrl} target="_blank" rel="noreferrer">
-			<h3 className="news-title"><span className="source-name">{newsItem.sectionName} / </span>{newsItem.webTitle}</h3>
+			<h3 className="news-title">
+				<span className="source-name">{newsItem.sectionName} / </span>
+				{newsItem.webTitle}
+				<span className="published-at-mobile"> ( {formatDate(newsItem.webPublicationDate, true)} )</span>
+			</h3>
 			<p className="news-description">{newsItem.fields.trailText}</p>
 			<p className="published-at">{formatDate(newsItem.webPublicationDate, true)}</p>
 		</a>
