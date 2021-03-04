@@ -25,7 +25,7 @@ const News = () => {
 	return (
 		<div className={`news-container ${expanded && 'expanded'}`}>
 			<button className="news-toggle" onClick={toggleNews} value="expand-news-pane"/>
-			<h1 className="headers news-header" onClick={toggleNews}>
+			<h1 className="news-header" onClick={toggleNews}>
 				News<span className="powered-by"> powered by <a href="https://www.theguardian.com/international" onClick={e => e.stopPropagation()}>The Guardian</a></span>
 			</h1>
 			<div className="news">
