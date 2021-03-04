@@ -106,9 +106,14 @@
 @media screen and (max-width: 850px){
     .news-header {
         font-size: 3em;
+        margin-top: 0.6em;
     }
 
     .news {
         flex-basis: 30vh;
+    }
+
+    .news-toggle {
+        width: 100px;
     }
 }
