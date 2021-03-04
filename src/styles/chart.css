@@ -1,7 +1,6 @@
 .chart-container {
     height: 50vh;
     width: 80vw;
-    font-size: 18px;
     min-width: 600px;
     position: relative;
     display: flex;

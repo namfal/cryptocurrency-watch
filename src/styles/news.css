@@ -57,8 +57,8 @@
 
 .news-item {
     background: rgba(255, 249, 233, 0.6);
-    margin: 40px 0;
-    padding: 10px;
+    margin: 1.5em 0;
+    padding: 0.5em;
     border-radius: 10px;
     backdrop-filter: blur(4px);
     overflow: visible;
@@ -79,8 +79,8 @@
 }
 
 .news-description {
-    margin: 10px 15px;
     font-size: 18px;
+    margin: 0.5em;
 }
 
 .source-name {
