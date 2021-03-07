@@ -8,7 +8,7 @@ import { throttle } from 'lodash'
 const widthLimitForYAxis = 850
 
 const Chart = ({ data, currency }) => {
-	const [width, setWidth] = useState(0)
+	const [width, setWidth] = useState(window.innerWidth)
 	const yValues = data.map(item => item.value)
 
 	useEffect(() => {
