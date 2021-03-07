@@ -1,11 +1,5 @@
-const currencySymbols = {
-	USD: '$',
-	EUR: '€',
-	GBP: '£'
-}
-
 export function formatPrice (value, currency = 'USD') {
-	return `${currencySymbols[currency]}${Number(value).toLocaleString('en', { minimumFractionDigits: 2 })}`
+	return `${Number(value).toLocaleString('en', { style: 'currency', currency })}`
 }
 
 export function formatDate (isoDate, fullDate = false) {
