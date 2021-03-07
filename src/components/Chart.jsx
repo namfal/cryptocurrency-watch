@@ -9,20 +9,14 @@ const widthLimitForYAxis = 850
 
 const Chart = ({ data, currency }) => {
 	const [width, setWidth] = useState(window.innerWidth)
-	const yValues = data.map(item => item.value)
-	const [min, setMin] = useState({ value: Math.min(...yValues) })
-	const [max, setMax] = useState({ value: Math.max(...yValues) })
+	const [min, setMin] = useState({ value: 0 })
+	const [max, setMax] = useState({ value: 0 })
 
 	useEffect(() => {
 		const yValues = data.map(item => item.value)
-		if (min.value > Math.min(...yValues)) {
-			setMin(data.filter(item => item.value === Math.min(...yValues))[0])
-		}
-
-		if (max.value < Math.max(...yValues)) {
-			setMax(data.filter(item => item.value === Math.max(...yValues))[0])
-		}
-	}, [min, max, data])
+		setMin(data.filter(item => item.value === Math.min(...yValues))[0] || 0)
+		setMax(data.filter(item => item.value === Math.max(...yValues))[0] || 0)
+	}, [data])
 
 	useEffect(() => {
 		const onResize = () => {
@@ -68,8 +62,8 @@ const Chart = ({ data, currency }) => {
 					dot={false}
 					strokeWidth={1.5}
 				/>
-				{width <= widthLimitForYAxis && <ReferenceLine stroke="white" x={max.date} y={max.value} strokeDasharray="5 20"/>}
-				{width <= widthLimitForYAxis && <ReferenceLine stroke="white" x={min.date} y={min.value} strokeDasharray="5 20"/>}
+				{width <= widthLimitForYAxis && <ReferenceLine stroke="white" x={max.date} y={max.value} label={max.value} strokeDasharray="5 20"/>}
+				{width <= widthLimitForYAxis && <ReferenceLine stroke="white" x={min.date} y={min.value} label={min.value} strokeDasharray="5 20"/>}
 			</LineChart>
 		</ResponsiveContainer>
 	</div>
