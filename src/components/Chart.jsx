@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/chart.css'
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceDot } from 'recharts'
 import ChartTooltip from './ChartTooltip'
 import { formatPrice, formatDate } from '../utils'
 import { throttle } from 'lodash'
@@ -62,8 +62,8 @@ const Chart = ({ data, currency }) => {
 					dot={false}
 					strokeWidth={1.5}
 				/>
-				{width <= widthLimitForYAxis && <ReferenceLine stroke="white" x={max.date} y={max.value} label={max.value} strokeDasharray="5 20"/>}
-				{width <= widthLimitForYAxis && <ReferenceLine stroke="white" x={min.date} y={min.value} label={min.value} strokeDasharray="5 20"/>}
+				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={max.date} y={max.value} />}
+				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={min.date} y={min.value} />}
 			</LineChart>
 		</ResponsiveContainer>
 	</div>
