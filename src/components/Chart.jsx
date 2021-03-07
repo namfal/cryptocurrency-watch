@@ -26,13 +26,11 @@ const Chart = ({ data, currency }) => {
 
 	useEffect(() => {
 		const onResize = () => {
-			console.log('window resized: ' + window.innerWidth)
 			setWidth(window.innerWidth)
 		}
 		window.addEventListener('resize', throttle(onResize, 1000))
 
 		return () => {
-			console.log('window resize listener removed')
 			window.removeEventListener('resize', onResize)
 		}
 	}, [])
