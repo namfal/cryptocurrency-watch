@@ -10,10 +10,6 @@ const Chart = ({ data, currency }) => {
 		<ResponsiveContainer>
 			<LineChart
 				data={data}
-				margin={{
-					right: 20,
-					left: 40
-				}}
 			>
 				<XAxis
 					dataKey="date"
@@ -31,6 +27,7 @@ const Chart = ({ data, currency }) => {
 					ticks={[Math.min(...yValues), Math.max(...yValues)]}
 					tickFormatter={value => formatPrice(value, currency)}
 					stroke="#fff"
+					width={100}
 				/>
 				<Tooltip content={<ChartTooltip currency={currency}/>} />
 				<Line
