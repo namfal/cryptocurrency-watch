@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/chart.css'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
 import ChartTooltip from './ChartTooltip'
 import { formatPrice, formatDate } from '../utils'
+import { throttle } from 'lodash'
+
+const widthLimitForYAxis = 850
 
 const Chart = ({ data, currency }) => {
+	const [width, setWidth] = useState(0)
 	const yValues = data.map(item => item.value)
+
+	useEffect(() => {
+		const onResize = () => {
+			console.log('window resized: ' + window.innerWidth)
+			setWidth(window.innerWidth)
+		}
+		window.addEventListener('resize', throttle(onResize, 1000))
+
+		return () => {
+			console.log('window resize listener removed')
+			window.removeEventListener('resize', onResize)
+		}
+	}, [])
+
 	return <div className="chart">
 		<ResponsiveContainer>
 			<LineChart
@@ -27,7 +45,8 @@ const Chart = ({ data, currency }) => {
 					ticks={[Math.min(...yValues), Math.max(...yValues)]}
 					tickFormatter={value => formatPrice(value, currency)}
 					stroke="#fff"
-					width={100}
+					width={width <= widthLimitForYAxis ? 10 : 100}
+					tick={width >= widthLimitForYAxis}
 				/>
 				<Tooltip content={<ChartTooltip currency={currency}/>} />
 				<Line
