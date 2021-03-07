@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/chart.css'
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts'
 import ChartTooltip from './ChartTooltip'
 import { formatPrice, formatDate } from '../utils'
 import { throttle } from 'lodash'
@@ -10,6 +10,19 @@ const widthLimitForYAxis = 850
 const Chart = ({ data, currency }) => {
 	const [width, setWidth] = useState(window.innerWidth)
 	const yValues = data.map(item => item.value)
+	const [min, setMin] = useState({ value: Math.min(...yValues) })
+	const [max, setMax] = useState({ value: Math.max(...yValues) })
+
+	useEffect(() => {
+		const yValues = data.map(item => item.value)
+		if (min.value > Math.min(...yValues)) {
+			setMin(data.filter(item => item.value === Math.min(...yValues))[0])
+		}
+
+		if (max.value < Math.max(...yValues)) {
+			setMax(data.filter(item => item.value === Math.max(...yValues))[0])
+		}
+	}, [min, max, data])
 
 	useEffect(() => {
 		const onResize = () => {
@@ -42,11 +55,11 @@ const Chart = ({ data, currency }) => {
 					domain={['dataMin', 'dataMax']}
 					padding={{ bottom: 25, top: 25 }}
 					tickLine={false}
-					ticks={[Math.min(...yValues), Math.max(...yValues)]}
+					ticks={[min.value, max.value]}
 					tickFormatter={value => formatPrice(value, currency)}
 					stroke="#fff"
-					width={width <= widthLimitForYAxis ? 10 : 100}
-					tick={width >= widthLimitForYAxis}
+					width={100}
+					hide={width <= widthLimitForYAxis}
 				/>
 				<Tooltip content={<ChartTooltip currency={currency}/>} />
 				<Line
@@ -57,6 +70,8 @@ const Chart = ({ data, currency }) => {
 					dot={false}
 					strokeWidth={1.5}
 				/>
+				{width <= widthLimitForYAxis && <ReferenceLine stroke="white" x={max.date} y={max.value} strokeDasharray="5 20"/>}
+				{width <= widthLimitForYAxis && <ReferenceLine stroke="white" x={min.date} y={min.value} strokeDasharray="5 20"/>}
 			</LineChart>
 		</ResponsiveContainer>
 	</div>
