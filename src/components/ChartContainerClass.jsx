@@ -7,6 +7,8 @@ import RadioButtons	from './RadioButtons'
 import CurrentValue from './ChartContainer'
 import { formatPrice } from '../utils'
 
+// This is the same component as ChartContainer but written using the Class syntax
+
 class ChartContainerClass extends React.Component {
 	constructor (props) {
 		super(props)
