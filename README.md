@@ -4,6 +4,8 @@ A side project to watch crypto value in real time and related news. I created th
 
 For a live demo, you can visit [here](https://tender-bose-c576c3.netlify.app).
 
+I am using free API endpoints, but these are rate limited.
+
 ## To run this locally
 
 Before you run this locally, you need to obtain your own API key from [The Guardian OpenPlatform](https://open-platform.theguardian.com) and put it in the `.env` file:
@@ -21,5 +23,3 @@ News by [The Guardian OpenPlatform](https://open-platform.theguardian.com/access
 Background by [SVGBackgrounds](SVGBackgrounds.com)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-PS: These are free to use API endpoints, but rate limited.
