@@ -49,7 +49,9 @@
     .current-value {
         font-size: 1.5em;
     }
+}
 
+@media screen and (max-width: 550px){
     .chart-controls {
         flex-direction: column;
     }
