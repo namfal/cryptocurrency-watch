@@ -1,5 +1,6 @@
 .chart-container {
     height: 50vh;
+    min-height: 300px;
     width: 80vw;
     position: relative;
     display: flex;
@@ -51,5 +52,12 @@
 
     .chart-controls {
         flex-direction: column;
+    }
+}
+
+
+@media screen and (max-height: 600px) {
+    .chart-container {
+        height: 80vh;
     }
 }
