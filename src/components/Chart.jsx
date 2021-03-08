@@ -16,6 +16,7 @@ const Chart = ({ data, currency }) => {
 		return [min, max]
 	}, [data])
 	const [minMax, setMinMax] = useState(() => calculateMinMax())
+	const [min, max] = minMax
 
 	useEffect(() => {
 		setMinMax(calculateMinMax())
@@ -50,7 +51,7 @@ const Chart = ({ data, currency }) => {
 					domain={['dataMin', 'dataMax']}
 					padding={{ bottom: 25, top: 25 }}
 					tickLine={false}
-					ticks={[minMax[0].value, minMax[1].value]}
+					ticks={[min.value, max.value]}
 					tickFormatter={value => formatPrice(value, currency)}
 					stroke="#fff"
 					width={100}
@@ -65,8 +66,8 @@ const Chart = ({ data, currency }) => {
 					dot={false}
 					strokeWidth={1.5}
 				/>
-				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={minMax[1].date} y={minMax[1].value} />}
-				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={minMax[0].date} y={minMax[0].value} />}
+				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={max.date} y={max.value} />}
+				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={min.date} y={min.value} />}
 			</LineChart>
 		</ResponsiveContainer>
 	</div>
