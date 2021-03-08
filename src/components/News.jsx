@@ -22,6 +22,12 @@ const News = () => {
 		})()
 	}, [])
 
+	if (news.length === 0) {
+		return <div className="news-container loading">
+			<div className="loading">Loading<span>.</span><span>.</span><span>.</span></div>
+		</div>
+	}
+
 	return (
 		<div className={`news-container ${expanded && 'expanded'}`}>
 			<button className="news-toggle" onClick={toggleNews} value="expand-news-pane"/>
