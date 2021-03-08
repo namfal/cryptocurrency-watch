@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import '../styles/chart.css'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceDot } from 'recharts'
 import ChartTooltip from './ChartTooltip'
@@ -9,14 +9,17 @@ const widthLimitForYAxis = 850
 
 const Chart = ({ data, currency }) => {
 	const [width, setWidth] = useState(window.innerWidth)
-	const [min, setMin] = useState({ value: 0 })
-	const [max, setMax] = useState({ value: 0 })
+	const calculateMinMax = useCallback(() => {
+		const yValues = data.map(item => item.value)
+		const min = data.filter(item => item.value === Math.min(...yValues))[0]
+		const max = data.filter(item => item.value === Math.max(...yValues))[0]
+		return [min, max]
+	}, [data])
+	const [minMax, setMinMax] = useState(() => calculateMinMax())
 
 	useEffect(() => {
-		const yValues = data.map(item => item.value)
-		setMin(data.filter(item => item.value === Math.min(...yValues))[0] || 0)
-		setMax(data.filter(item => item.value === Math.max(...yValues))[0] || 0)
-	}, [data])
+		setMinMax(calculateMinMax())
+	}, [data, calculateMinMax])
 
 	useEffect(() => {
 		const onResize = () => {
@@ -47,7 +50,7 @@ const Chart = ({ data, currency }) => {
 					domain={['dataMin', 'dataMax']}
 					padding={{ bottom: 25, top: 25 }}
 					tickLine={false}
-					ticks={[min.value, max.value]}
+					ticks={[minMax[0].value, minMax[1].value]}
 					tickFormatter={value => formatPrice(value, currency)}
 					stroke="#fff"
 					width={100}
@@ -62,8 +65,8 @@ const Chart = ({ data, currency }) => {
 					dot={false}
 					strokeWidth={1.5}
 				/>
-				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={max.date} y={max.value} />}
-				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={min.date} y={min.value} />}
+				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={minMax[1].date} y={minMax[1].value} />}
+				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={minMax[0].date} y={minMax[0].value} />}
 			</LineChart>
 		</ResponsiveContainer>
 	</div>
