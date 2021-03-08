@@ -41,6 +41,10 @@
     color: #fff;
 }
 
+.chart-controls {
+    flex-wrap: wrap;
+}
+
 @media screen and (max-width: 850px){
     .chart-container {
         width: 95vw;
@@ -50,13 +54,6 @@
         font-size: 1.5em;
     }
 }
-
-@media screen and (max-width: 550px){
-    .chart-controls {
-        flex-direction: column;
-    }
-}
-
 
 @media screen and (max-height: 600px) {
     .chart-container {
