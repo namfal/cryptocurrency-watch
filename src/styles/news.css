@@ -20,6 +20,10 @@
     transform: translateY(15vh);
 }
 
+.news-container.loading {
+    align-items: center;
+}
+
 .news-header {
     font-family: 'ITC Benguiat', serif;
     font-size: 6em;
@@ -107,6 +111,21 @@
     display: none;
     font-weight: 300;
     font-size:0.9em;
+}
+
+.powered-by {
+    text-shadow: none;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.powered-by a {
+    color: #fff;
+}
+
+.powered-by a:hover {
+    color: #a4a4a4;
 }
 
 @media screen and (max-width: 850px){
