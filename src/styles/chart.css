@@ -14,6 +14,10 @@
     backdrop-filter: blur(8px);
 }
 
+.chart-container.centered {
+    justify-content: center;
+}
+
 .chart {
     height: 60%;
     width: 100%;

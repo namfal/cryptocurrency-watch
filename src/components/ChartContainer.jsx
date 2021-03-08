@@ -97,6 +97,12 @@ const ChartContainer = () => {
 
 	const getPair = () => `${crypto}-${currency}`
 
+	if (data.length === 0) {
+		return <div className="chart-container centered">
+			<div className="loading">Loading...</div>
+		</div>
+	}
+
 	return <div className="chart-container">
 		<div className="chart-titles">
 			<CurrentValue>{getPair()}</CurrentValue>
