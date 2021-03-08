@@ -99,7 +99,7 @@ const ChartContainer = () => {
 
 	if (data.length === 0) {
 		return <div className="chart-container centered">
-			<div className="loading">Loading...</div>
+			<div className="loading">Loading<span>.</span><span>.</span><span>.</span></div>
 		</div>
 	}
 
