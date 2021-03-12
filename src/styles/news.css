@@ -53,9 +53,9 @@
     top: 15px;
     border-radius: 20px;
     border: none;
-    background: white;
+    background: rgba(35, 175, 186, 1.00);
     outline: none;
-    opacity: 0.2;
+    opacity: 0.5;
     transition: all 200ms ease-in-out;
     animation-name: float;
     animation-duration: 2500ms;
