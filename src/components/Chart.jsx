@@ -61,10 +61,10 @@ const Chart = ({ data, currency }) => {
 				<Line
 					type="monotone"
 					dataKey="value"
-					stroke="rgba(65, 185, 131, 1)"
+					stroke="rgba(35, 175, 186, 1.00)"
 					activeDot={{ r: 4 }}
 					dot={false}
-					strokeWidth={1.5}
+					strokeWidth={2}
 				/>
 				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={max.date} y={max.value} />}
 				{width <= widthLimitForYAxis && <ReferenceDot r={5} fill="#FF9D00" stroke="none" x={min.date} y={min.value} />}

@@ -20,8 +20,8 @@
 .radio-option:hover {
     cursor: pointer;
     opacity: 1;
-    box-shadow: 0 0 4px 1px rgb(65, 185, 131);
-    border-color: rgb(65, 185, 131);
+    box-shadow: 0 0 4px 1px rgb(35, 175, 186);
+    border-color: rgb(35, 175, 186);
 }
 
 .radio-option label:hover {
@@ -31,7 +31,7 @@
 .radio-option.selected {
     background: rgb(23, 21, 38);
     color: #fff;
-    box-shadow: 0 0 4px 2px rgb(65, 185, 131);
+    box-shadow: 0 0 4px 2px rgb(35, 175, 186);
     opacity: 1;
 }
 
