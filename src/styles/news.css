@@ -57,6 +57,11 @@
     outline: none;
     opacity: 0.2;
     transition: all 200ms ease-in-out;
+    animation-name: float;
+    animation-duration: 2500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
 }
 
 .news-toggle:hover {
@@ -122,6 +127,12 @@
 
 .powered-by a:hover {
     color: #a4a4a4;
+}
+
+@keyframes float {
+    from {transform: translateY(0px)}
+    to {transform: translateY(10px)}
+
 }
 
 @media screen and (max-width: 850px){

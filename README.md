@@ -20,6 +20,6 @@ Crypto data by [coinbase Pro](https://docs.pro.coinbase.com/#fix-api)
 
 News by [The Guardian OpenPlatform](https://open-platform.theguardian.com/access/)
 
-Background by [SVGBackgrounds](SVGBackgrounds.com)
+Mesh Gradient by [Mesh](meshgradient.com)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
