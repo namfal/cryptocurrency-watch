@@ -20,10 +20,6 @@
     transform: translateY(15vh);
 }
 
-.news-container.loading {
-    align-items: center;
-}
-
 .news-header {
     font-family: 'ITC Benguiat', serif;
     font-size: 6em;

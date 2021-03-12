@@ -23,6 +23,8 @@ export function getHistoricalData (productId, range = '24hrs') {
 			}
 		}
 		return response.data.sort(sortFn).map(mapFn)
+	}).catch(e => {
+		throw new Error(e)
 	})
 }
 
@@ -37,6 +39,7 @@ export function getGuardianNews () {
 		}
 	}).then(async response => {
 		return response.data.response.results
-	}
-	)
+	}).catch(e => {
+		throw new Error(e)
+	})
 }

@@ -10,6 +10,7 @@ import { formatPrice } from '../utils'
 const ChartContainer = () => {
 	const socket = useRef(null)
 	const [data, setData] = useState([])
+	const [error, setError] = useState('')
 	const [currency, setCurrency] = useState('USD')
 	const [crypto, setCrypto] = useState('BTC')
 
@@ -20,6 +21,7 @@ const ChartContainer = () => {
 				setData(resp)
 			} catch (e) {
 				console.error(e.message)
+				setError('There was an error while retrieving historical data.')
 			}
 		})()
 
@@ -52,6 +54,7 @@ const ChartContainer = () => {
 
 			socket.current.onerror = (error) => {
 				console.error(`[error] ${error.message}`)
+				setError('We have encountered an error while retrieving current price data.')
 			}
 
 			socket.current.onclose = (e) => {
@@ -96,6 +99,12 @@ const ChartContainer = () => {
 	}
 
 	const getPair = () => `${crypto}-${currency}`
+
+	if (error) {
+		return <div className="chart-container centered">
+			<div className="error">{error}</div>
+		</div>
+	}
 
 	if (data.length === 0) {
 		return <div className="chart-container centered">

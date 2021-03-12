@@ -3,10 +3,11 @@ a, a:active, a:visited, a:hover {
     text-decoration: none;
 }
 
-.loading {
+.loading, .error {
     font-size: 2em;
     color: white;
     padding: 1em;
+    text-align: center;
 }
 
 .loading span {
