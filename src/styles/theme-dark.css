@@ -1,0 +1,94 @@
+body.dark {
+    background-color: #050d1c;
+    background-image: url('../assets/mesh-gradient.png');
+}
+
+body.dark .radio-option {
+    color: rgb(23, 21, 38);
+    border-color: rgb(23, 21, 38);
+    background: #fff;
+}
+
+body.dark .radio-option:hover {
+    box-shadow: 0 0 4px 1px rgb(35, 175, 186);
+    border-color: rgb(35, 175, 186);
+}
+
+body.dark .radio-option.selected {
+    background: rgb(23, 21, 38);
+    color: #fff;
+    box-shadow: 0 0 4px 2px rgb(35, 175, 186);
+}
+
+body.dark .chart-container {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1),  rgba(255, 255, 255, 0.2));
+}
+
+body.dark .recharts-layer.recharts-line path {
+    stroke: rgba(35, 175, 186, 1.00);
+}
+
+body.dark .recharts-layer.recharts-cartesian-axis line {
+    stroke: #fff;
+}
+
+body.dark .recharts-layer.recharts-cartesian-axis text {
+    fill: #fff;
+}
+
+body.dark .chart-tooltip {
+    background-color: #fff;
+}
+
+body.dark .current-value {
+    color: #fff;
+}
+
+body.dark a, a:active, a:visited, a:hover {
+    color: #000;
+}
+
+body.dark .loading, .error {
+    color: #fff;
+}
+
+body.dark .news-container {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(20, 10, 41, 0.3), rgba(21, 33, 60, 0.6));
+    border-color:#fff;
+}
+
+body.dark .news-container:hover {
+    border-color: rgba(35, 175, 186, 0.5);
+}
+
+body.dark .news-header {
+    color: hsl(338, 78%, 97%);
+}
+
+body.dark .news-toggle {
+    background: rgba(35, 175, 186, 1.00);
+}
+
+body.dark .news-item {
+    background: rgba(255, 249, 233, 0.6);
+}
+
+body.dark .news-item:hover .news-title {
+    color: rgb(48, 44, 153);
+}
+
+body.dark .news-item:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+body.dark .source-name {
+    color: rgb(156, 11, 31);
+}
+
+body.dark .powered-by a {
+    color: #fff;
+}
+
+body.dark .powered-by a:hover {
+    color: #a4a4a4;
+}

@@ -61,7 +61,7 @@ const Chart = ({ data, currency }) => {
 				<Line
 					type="monotone"
 					dataKey="value"
-					stroke="rgba(35, 175, 186, 1.00)"
+					stroke="#fff"
 					activeDot={{ r: 4 }}
 					dot={false}
 					strokeWidth={2}

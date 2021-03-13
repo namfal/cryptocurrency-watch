@@ -1,0 +1,94 @@
+body.light {
+    background-color: #fff;
+    background-image: url('../assets/99.-Roman.jpg');
+}
+
+body.light .radio-option {
+    color: rgb(4, 25, 83);
+    border-color: rgb(4, 25, 83);
+    background: #fff;
+}
+
+body.light .radio-option:hover {
+    box-shadow: 0 0 4px 1px rgb(35, 175, 186);
+    border-color: rgb(35, 175, 186);
+}
+
+body.light .radio-option.selected {
+    background: rgb(4, 25, 83);
+    color: #fff;
+    box-shadow: 0 0 4px 2px rgb(35, 175, 186);
+}
+
+body.light .chart-container {
+    background: linear-gradient(to bottom right, rgba(216, 216, 216, 0.51), rgba(246, 246, 246, 0.6));
+}
+
+body.light .recharts-layer.recharts-line path{
+    stroke: rgb(4, 25, 83);
+}
+
+body.light .recharts-layer.recharts-cartesian-axis line {
+    stroke: rgb(4, 25, 83);
+}
+
+body.light .recharts-layer.recharts-cartesian-axis text {
+    fill: rgb(4, 25, 83);
+}
+
+body.light .chart-tooltip {
+    background-color: #fff;
+}
+
+body.light .current-value {
+    color: rgb(4, 25, 83);
+}
+
+body.light a, a:active, a:visited, a:hover {
+    color: rgb(4, 25, 83);
+}
+
+body.light .loading, .error {
+    color: rgb(4, 25, 83);
+}
+
+body.light .news-container {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(50, 20, 175, 0.3), rgba(47, 115, 175, 0.6));
+    border-color:#fff;
+}
+
+body.light .news-container:hover {
+    border-color: rgb(4, 25, 83);
+}
+
+body.light .news-header {
+    color: hsl(338, 78%, 97%);
+}
+
+body.light .news-toggle {
+    background: rgb(4, 25, 83);
+}
+
+body.light .news-item {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+body.light .news-item:hover .news-title {
+    color: rgb(58, 49, 221);
+}
+
+body.light .news-item:hover {
+    background: rgba(255, 254, 228, 0.8);
+}
+
+body.light .source-name {
+    color: rgb(156, 11, 31);
+}
+
+body.light .powered-by a {
+    color: #3a31dd;
+}
+
+body.light .powered-by a:hover {
+    color: rgb(4, 25, 83);
+}
