@@ -10,8 +10,8 @@ import ThemeToggle from './components/ThemeToggle'
 function App () {
 	return (
 		<div className="App">
-			<ThemeToggle/>
 			<div className="top-container">
+				<ThemeToggle/>
 				<ChartContainer />
 			</div>
 			<News />
