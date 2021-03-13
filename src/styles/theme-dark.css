@@ -92,3 +92,16 @@ body.dark .powered-by a {
 body.dark .powered-by a:hover {
     color: #a4a4a4;
 }
+
+body.dark .theme-toggle {
+    border-color: #fff;
+}
+
+body.dark .theme-toggle button {
+    color: #fff;
+}
+
+body.dark .theme-toggle button.selected {
+    color: rgb(23, 21, 38);
+    background-color: white;
+}

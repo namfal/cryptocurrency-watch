@@ -92,3 +92,16 @@ body.light .powered-by a {
 body.light .powered-by a:hover {
     color: rgb(4, 25, 83);
 }
+
+body.light .theme-toggle {
+    border-color: rgb(4, 25, 83);
+}
+
+body.light .theme-toggle button {
+    color: rgb(4, 25, 83);
+}
+
+body.light .theme-toggle button.selected {
+    color: rgb(4, 25, 83);
+    background-color: white;
+}
