@@ -101,6 +101,10 @@ body.light .theme-toggle button {
     color: rgb(4, 25, 83);
 }
 
+body.light .theme-toggle button:hover {
+    background-color: #fff;
+}
+
 body.light .theme-toggle button.selected {
     color: rgb(4, 25, 83);
     background-color: white;

@@ -18,3 +18,7 @@
     align-items: center;
     border-radius: 8px;
 }
+
+body.dark .theme-toggle button:hover {
+    cursor: pointer;
+}
