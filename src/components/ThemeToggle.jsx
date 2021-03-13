@@ -36,10 +36,10 @@ const ThemeToggle = () => {
 		<button onClick={() => setThemeAndSave('dark')} title="Dark" className={currentTheme === 'dark' ? 'selected' : undefined}>
 			{currentTheme === 'dark' ? <RiMoonClearFill /> : <RiMoonClearLine/> }
 		</button>
-		<button onClick={setThemeToSystem} title="System" className={currentTheme === 'dark' ? 'selected' : undefined}>
+		<button onClick={setThemeToSystem} title="System" className={currentTheme === 'system' ? 'selected' : undefined}>
 			System
 		</button>
-		<button onClick={() => setThemeAndSave('light')} title="Light" className={currentTheme === 'dark' ? 'selected' : undefined}>
+		<button onClick={() => setThemeAndSave('light')} title="Light" className={currentTheme === 'light' ? 'selected' : undefined}>
 			{currentTheme === 'light' ? <RiSunFill /> : <RiSunLine/> }
 		</button>
 	</div>
