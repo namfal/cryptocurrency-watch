@@ -59,7 +59,6 @@
     top: 15px;
     border-radius: 20px;
     border: none;
-    outline: none;
     opacity: 0.5;
     transition: all 200ms ease-in-out;
     animation-name: float;
@@ -80,6 +79,10 @@
     backdrop-filter: blur(4px);
     overflow: visible;
     position: relative;
+}
+
+.news-item a {
+    display: block;
 }
 
 .news-item:hover {

@@ -9,6 +9,7 @@ const RadioButtons = ({ options, name, handleClick, currentValue }) => {
 					key={option + index}
 					className={`radio-option ${currentValue === option && 'selected'}`}
 					onClick={() => handleClick(option)}
+					tabIndex="0"
 				>
 					<input
 						className="radio-input"

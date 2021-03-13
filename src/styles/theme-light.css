@@ -105,3 +105,8 @@ body.light .theme-toggle button.selected {
     color: rgb(4, 25, 83);
     background-color: white;
 }
+
+body.light :focus, body.light .radio-option.selected:focus {
+    box-shadow: 0 0 4pt 2pt #ff4118;
+    opacity: 1;
+}

@@ -22,3 +22,7 @@ a, a:active, a:visited, a:hover {
 .loading span:nth-child(3) {
     animation-delay: 2s;
 }
+
+:focus {
+    outline: none   ;
+}
