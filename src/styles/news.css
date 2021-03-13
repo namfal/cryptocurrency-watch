@@ -44,7 +44,7 @@
 .news {
     overflow: scroll;
     height: 200px;
-    flex: 0 1 25vh;
+    flex: 0 1 calc(100vh - 65vh - 130px);
 }
 
 .news-container.expanded .news {
