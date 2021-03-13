@@ -22,6 +22,7 @@ body.light .radio-option.selected {
 
 body.light .chart-container {
     background: linear-gradient(to bottom right, rgba(216, 216, 216, 0.51), rgba(246, 246, 246, 0.6));
+    box-shadow: 4px 4px 20px 0 #55867d6b;
 }
 
 body.light .recharts-layer.recharts-line path{
