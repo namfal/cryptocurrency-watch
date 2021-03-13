@@ -9,6 +9,9 @@ const RadioButtons = ({ options, name, handleClick, currentValue }) => {
 					key={option + index}
 					className={`radio-option ${currentValue === option && 'selected'}`}
 					onClick={() => handleClick(option)}
+					onKeyPress={(e) => {
+						if (e.key === 'Enter') { handleClick(option) }
+					}}
 					tabIndex="0"
 				>
 					<input
