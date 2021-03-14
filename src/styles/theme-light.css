@@ -45,11 +45,15 @@ body.light .current-value {
     color: rgb(4, 25, 83);
 }
 
-body.light a, a:active, a:visited, a:hover {
+body.light a,
+body.light a:active,
+body.light a:visited,
+body.light a:hover {
     color: rgb(4, 25, 83);
 }
 
-body.light .loading, .error {
+body.light .loading,
+body.light .error {
     color: rgb(4, 25, 83);
 }
 
@@ -111,7 +115,8 @@ body.light .theme-toggle button.selected {
     background-color: white;
 }
 
-body.light :focus, body.light .radio-option.selected:focus {
+body.light :focus,
+body.light .radio-option.selected:focus {
     box-shadow: 0 0 4pt 2pt #ff4118;
     opacity: 1;
 }
