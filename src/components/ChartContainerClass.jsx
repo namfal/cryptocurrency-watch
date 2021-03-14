@@ -53,7 +53,9 @@ class ChartContainerClass extends React.Component {
 	}
 
 	async componentDidUpdate (prevProps, prevState, snapshot) {
-		if (prevState.currency !== this.state.currency) {
+		const currencyChanged = prevState.currency !== this.state.currency
+		const cryptoChanged = prevState.crypto !== this.state.crypto
+		if (currencyChanged || cryptoChanged) {
 			this.setState({ data: [] })
 			await this.loadHistoricalData()
 			this.unsubscribe()
