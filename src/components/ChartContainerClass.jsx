@@ -4,7 +4,7 @@ import { getHistoricalData } from '../services/services'
 import { throttle } from 'lodash'
 import Chart from './Chart'
 import RadioButtons	from './RadioButtons'
-import CurrentValue from './ChartContainer'
+import CurrentValue from './CurrentValue'
 import { formatPrice } from '../utils'
 
 // This is the same component as ChartContainer but written using the Class syntax
