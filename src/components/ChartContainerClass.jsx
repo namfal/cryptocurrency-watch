@@ -4,7 +4,7 @@ import { getHistoricalData } from '../services/services'
 import { throttle } from 'lodash'
 import Chart from './Chart'
 import RadioButtons	from './RadioButtons'
-import CurrentValue from './ChartContainer'
+import CurrentValue from './CurrentValue'
 import { formatPrice } from '../utils'
 
 // This is the same component as ChartContainer but written using the Class syntax
@@ -16,7 +16,8 @@ class ChartContainerClass extends React.Component {
 		this.state = {
 			data: [],
 			currency: 'USD',
-			crypto: 'BTC'
+			crypto: 'BTC',
+			error: ''
 		}
 		this.handleCurrencyChange = this.handleCurrencyChange.bind(this)
 		this.handleCryptoChange = this.handleCryptoChange.bind(this)
@@ -31,6 +32,9 @@ class ChartContainerClass extends React.Component {
 
 		this.socket.onerror = (error) => {
 			console.error(`[error] ${error.message}`)
+			this.setState({
+				error: 'We have encountered an error while retrieving current price data.'
+			})
 		}
 
 		this.socket.onclose = (e) => {
@@ -53,7 +57,9 @@ class ChartContainerClass extends React.Component {
 	}
 
 	async componentDidUpdate (prevProps, prevState, snapshot) {
-		if (prevState.currency !== this.state.currency) {
+		const currencyChanged = prevState.currency !== this.state.currency
+		const cryptoChanged = prevState.crypto !== this.state.crypto
+		if (currencyChanged || cryptoChanged) {
 			this.setState({ data: [] })
 			await this.loadHistoricalData()
 			this.unsubscribe()
@@ -71,6 +77,9 @@ class ChartContainerClass extends React.Component {
 			this.setState({ data: resp })
 		} catch (e) {
 			console.error(e.message)
+			this.setState({
+				error: 'There was an error while retrieving historical data.'
+			})
 		}
 	}
 
@@ -110,6 +119,12 @@ class ChartContainerClass extends React.Component {
 	}
 
 	render () {
+		if (this.state.error) {
+			return <div className="chart-container centered">
+				<div className="error">{this.state.error}</div>
+			</div>
+		}
+
 		if (this.state.data.length === 0) {
 			return <div className="chart-container centered">
 				<div className="loading">Loading<span>.</span><span>.</span><span>.</span></div>
