@@ -9,7 +9,7 @@ const NewsItem = ({ newsItem }) => {
 				{newsItem.webTitle}
 				<span className="published-at-mobile"> ( {formatDate(newsItem.webPublicationDate, true)} )</span>
 			</h3>
-			<p className="news-description">{newsItem.fields.trailText}</p>
+			<p className="news-description" dangerouslySetInnerHTML={{ __html: newsItem.fields.trailText }}/>
 			<p className="published-at">{formatDate(newsItem.webPublicationDate, true)}</p>
 		</a>
 	</div>
