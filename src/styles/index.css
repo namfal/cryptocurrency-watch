@@ -29,3 +29,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+body,html, #root {
+  height: 100%;
+}
