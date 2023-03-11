@@ -99,43 +99,41 @@ const ChartContainer = () => {
 	}
 
 	const getPair = () => `${crypto}-${currency}`
-
-	if (error) {
+	if (error && data.length === 0) {
 		return <div className="chart-container centered">
 			<div className="error">{error}</div>
 		</div>
-	}
-
-	if (data.length === 0) {
+	} else if (data.length === 0) {
 		return <div className="chart-container centered">
 			<div className="loading">Loading<span>.</span><span>.</span><span>.</span></div>
 		</div>
-	}
-
-	return <div className="chart-container">
-		<div className="chart-titles">
-			<CurrentValue>{getPair()}</CurrentValue>
-			{
-				data.length > 0 &&
+	} else {
+		return <div className="chart-container">
+			<div className="chart-titles">
+				<CurrentValue>{getPair()}</CurrentValue>
+				{
+					data.length > 0 &&
 				<CurrentValue>{formatPrice(data[data.length - 1].value, currency)}</CurrentValue>
-			}
+				}
+			</div>
+			<Chart data={data} currency={currency}/>
+			<div className="chart-controls">
+				<RadioButtons
+					options={['BTC', 'ETH', 'LTC', 'BCH', 'ETC']}
+					name="crypto"
+					handleClick={handleCryptoChange}
+					currentValue={crypto}
+				/>
+				<RadioButtons
+					options={['USD', 'EUR', 'GBP']}
+					name="currency"
+					handleClick={handleCurrencyChange}
+					currentValue={currency}
+				/>
+			</div>
+			{error && <p>{error}</p>}
 		</div>
-		<Chart data={data} currency={currency}/>
-		<div className="chart-controls">
-			<RadioButtons
-				options={['BTC', 'ETH', 'LTC', 'BCH', 'ETC']}
-				name="crypto"
-				handleClick={handleCryptoChange}
-				currentValue={crypto}
-			/>
-			<RadioButtons
-				options={['USD', 'EUR', 'GBP']}
-				name="currency"
-				handleClick={handleCurrencyChange}
-				currentValue={currency}
-			/>
-		</div>
-	</div>
+	}
 }
 
 export default ChartContainer
