@@ -47,13 +47,13 @@ const ChartContainer = () => {
 
 	useEffect(() => {
 		if (!socket.current) {
-			socket.current = new WebSocket('wss://ws-feed.gdax.com')
+			socket.current = new WebSocket('wss://ws-feed.exchange.coinbase.com')
 			socket.current.onopen = () => {
 				socket.current.send(JSON.stringify(getSubscription()))
 			}
 
 			socket.current.onerror = (error) => {
-				console.error(`[error] ${error.message}`)
+				console.error('[error]', error)
 				setError('We have encountered an error while retrieving current price data.')
 			}
 
