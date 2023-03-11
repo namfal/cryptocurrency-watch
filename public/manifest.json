@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Cryptocurrency watch",
+  "name": "Nami's cryptocurrency watch",
   "icons": [
     {
       "src": "favicons/favicon.ico",
